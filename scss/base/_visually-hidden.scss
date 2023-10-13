@@ -1,0 +1,69 @@
+
+
+.base-visually-hidden {
+    position: absolute !important;
+  
+    width: 1px !important;
+    height: 1px !important;
+    // If margin is set to a negative value it can cause text to be announced in
+    // the wrong order in VoiceOver for OSX
+    margin: 0 !important;
+    padding: 0 !important;
+  
+    overflow: hidden !important;
+    clip: rect(0 0 0 0)  !important;
+    -webkit-clip-path: inset(50%)  !important;
+            clip-path: inset(50%)  !important; 
+  
+    border: 0  !important;
+  
+    // For long content, line feeds are not interpreted as spaces and small width
+    // causes content to wrap 1 word per line:
+    // https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+    white-space: nowrap  !important;
+  }
+  
+  /// Hide an element visually, but have it available for screen readers whilst
+  /// allowing the element to be focused when navigated to via the keyboard (e.g.
+  /// for the skip link)
+  ///
+  /// This is slightly less opinionated about borders and padding to make it
+  /// easier to style the focussed element.
+
+  
+.base-visually-hidden-focusable {
+    position: absolute !important;
+  
+    width: 1px !important;
+    height: 1px !important;
+    // If margin is set to a negative value it can cause text to be announced in
+    // the wrong order in VoiceOver for OSX
+    margin: 0 !important;
+  
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+            clip-path: inset(50%) !important;
+  
+    // For long content, line feeds are not interpreted as spaces and small width
+    // causes content to wrap 1 word per line:
+    // https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+    white-space: nowrap !important;
+  
+    &:active,
+    &:focus {
+      position: static !important;
+  
+      width: auto !important;
+      height: auto !important;
+      margin: inherit !important;
+  
+      overflow: visible !important;
+      clip: auto !important;
+      -webkit-clip-path: none !important;
+              clip-path: none !important;
+  
+      white-space: inherit !important;
+    }
+  }
+  

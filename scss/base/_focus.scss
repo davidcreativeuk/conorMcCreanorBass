@@ -1,0 +1,7 @@
+@mixin focus-style {
+    outline: 4px solid map-get($base-colours, 'dark-cyan');
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px map-get($base-colours, 'white');
+    border:0;
+
+}

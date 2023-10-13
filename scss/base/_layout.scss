@@ -1,0 +1,41 @@
+.base-width-container{
+  max-width: 1016px;
+  position: relative;
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
+  @include md {
+    margin-left: 3.2rem;
+    margin-right: 3.2rem;
+  }  
+  @include lg {
+    margin-left: 3.2rem;
+    margin-right: 3.2rem;
+  }  
+  @include xl {
+    margin-left: auto; 
+    margin-right: auto;
+  }  
+}
+
+.base-main-wrapper{
+  padding-top: map-get($base-spacing, '7');
+  padding-bottom: map-get($base-spacing, '5');
+  @include md {
+    padding-top: map-get($base-spacing, '10');
+    padding-bottom: map-get($base-spacing, '9');
+  }
+}
+
+
+@each $name, $value in $base-spacing {
+  .base-bottom-margin--#{$name} {
+    margin-bottom: $value !important;
+  }   
+}
+
+@each $name, $value in $base-spacing {
+  .base-top-margin--#{$name} {
+    margin-top: $value !important;
+  }   
+}
+

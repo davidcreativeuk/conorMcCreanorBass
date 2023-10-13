@@ -1,0 +1,23 @@
+.base-footer {
+    font-family: $base-font-family;
+    font-size: map-get($base-font-sizes, 'text-sm');
+    line-height: $base-line-height;
+    font-weight: $base-font-weight-regular; 
+    border-top: 1px solid map-get($base-colours, 'black'); 
+    padding-bottom: map-get($base-spacing , '7'); 
+    @include md {
+        font-size: map-get($base-font-sizes, 'text-sm');
+        padding-bottom: map-get($base-spacing , '7'); 
+    }
+
+}
+
+.base-footer-navitem {
+    display:block;
+    margin-top:map-get($base-spacing , '5'); 
+    @include md {
+        display: inline-block;
+        margin-top:map-get($base-spacing , '7'); 
+        padding-right:map-get($base-spacing , '9');  
+    }
+}

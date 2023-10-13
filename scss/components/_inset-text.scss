@@ -1,0 +1,13 @@
+.base-inset-text {
+    padding:map-get($base-spacing, '3') 0 map-get($base-spacing, '3')  map-get($base-spacing, '5');
+    border-left: .8rem solid map-get($base-colours, 'black');
+    display:block;
+    margin-top: 0;
+    margin-bottom: map-get($base-spacing, '4');
+    @include md {
+    margin-bottom: map-get($base-spacing, '5'); 
+  }
+    .base-body:last-of-type {
+        margin-bottom: 0;
+    }
+}

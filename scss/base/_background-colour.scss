@@ -1,0 +1,6 @@
+/*colour classes for changing the background colour of elements*/
+@each $name, $value in $base-colours {
+  .base-bg--#{$name} {
+    background-color: $value !important;
+  }   
+}

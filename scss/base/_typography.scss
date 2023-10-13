@@ -1,0 +1,171 @@
+/* colours variables for text */
+$base-font-colour: map-get($base-colours, 'black');
+$base-heading-colour: map-get($base-colours, 'black');
+$base-link-colour: map-get($base-colours, 'blue');
+$base-link-colour--hover: map-get($base-colours, 'dark-blue');
+$base-link-colour--visited: map-get($base-colours, 'purple');
+
+/* default heading & text setup */
+@mixin baseheading {
+  font-family: $base-heading-family;
+  line-height: $base-line-height;
+  font-weight: $base-font-weight-bold;
+  color: $base-heading-colour;
+  margin-top: 0;
+  display: block;
+}
+
+@mixin basebody {
+  font-family: $base-font-family;
+  line-height: $base-line-height;
+  font-weight: $base-font-weight-regular;
+  color: $base-font-colour;
+  margin-top: 0;
+  display: block;
+}
+
+
+
+.base-heading-h1 {
+  @include baseheading;
+  font-size: map-get($base-font-sizes, 'h1-sm');
+  margin-bottom: map-get($base-spacing, '4'); 
+  @include md {
+    font-size: map-get($base-font-sizes, 'h1');
+    margin-bottom: map-get($base-spacing, '5'); 
+  }
+} 
+
+.base-heading-h2 {
+  @include baseheading;
+  font-size: map-get($base-font-sizes, 'h2-sm');
+  margin-bottom: map-get($base-spacing, '4');
+    @include md {
+    font-size: map-get($base-font-sizes, 'h2');
+    margin-bottom: map-get($base-spacing, '5'); 
+  }
+}
+
+.base-heading-h3 {
+  @include baseheading;
+  font-size: map-get($base-font-sizes, 'h3-sm');
+  margin-bottom: map-get($base-spacing, '4');
+    @include md {
+    font-size: map-get($base-font-sizes, 'h3');
+    margin-bottom: map-get($base-spacing, '4'); 
+  }
+}
+
+.base-heading-h4 {
+  @include baseheading;
+  font-size: map-get($base-font-sizes, 'h4-sm');
+  margin-bottom: map-get($base-spacing, '4'); 
+    @include md {
+    font-size: map-get($base-font-sizes, 'h4');
+    margin-bottom: map-get($base-spacing, '4'); 
+  }
+}
+
+.base-body + .base-heading-h2, .base-list + .base-heading-h2 {
+  padding-top: map-get($base-spacing, '2');
+}
+
+.base-body-l + .base-heading-h2 {
+  padding-top: map-get($base-spacing, '0');
+  @include md {
+  padding-top: map-get($base-spacing, '1');
+  }
+}
+
+.base-body + .base-heading-h3 , .base-list + .base-heading-h3 {
+  padding-top: map-get($base-spacing, '2');
+}
+
+.base-body + .base-heading-h4, .base-list + .base-heading-h4 {
+  padding-top: map-get($base-spacing, '2');
+  @include md {
+    padding-top: map-get($base-spacing, '0');
+  }
+}
+
+.base-body-large {
+  @include basebody;
+  font-size: map-get($base-font-sizes, 'intro-text-sm');
+  margin-bottom: map-get($base-spacing, '6');
+    @include md {
+    font-size: map-get($base-font-sizes, 'intro-text');
+    margin-bottom: map-get($base-spacing, '7'); 
+  }
+}
+
+.base-body {
+  @include basebody;
+  font-size: map-get($base-font-sizes, 'text-sm');
+  margin-bottom: map-get($base-spacing, '4');
+    @include md {
+    font-size: map-get($base-font-sizes, 'text');
+    margin-bottom: map-get($base-spacing, '5'); 
+  }
+}
+
+.base-body-small {
+  @include basebody;
+  font-size: map-get($base-font-sizes, 'small-text-sm');
+  margin-bottom: map-get($base-spacing, '4');
+  @include md {
+    font-size: map-get($base-font-sizes, 'small-text');
+    margin-bottom: map-get($base-spacing, '5'); 
+  }
+}
+
+.base-body-bold {
+  font-weight: $base-font-weight-bold;
+}
+
+.base-list {
+  @include basebody;
+  font-size: map-get($base-font-sizes, 'text-sm');
+  margin-bottom: map-get($base-spacing, '4');
+  padding-left: map-get($base-spacing, '5');
+    @include md {
+    font-size: map-get($base-font-sizes, 'text');
+    margin-bottom: map-get($base-spacing, '5'); 
+  }
+  li {
+    margin-bottom: map-get($base-spacing, '1');
+  }
+}
+
+.base-list--number {
+  list-style-type: decimal;
+}
+
+.base-list--bullet {
+  list-style-type: disc; 
+}
+
+.base-link {
+  cursor: pointer;
+  color: $base-link-colour;
+  text-decoration: underline; 
+  &:link {
+    color: $base-link-colour;
+  }
+  &:hover {
+    color: $base-link-colour--hover;
+  }
+  &:visited {
+    color: $base-link-colour--visited;
+  }
+  &:focus {
+    @include focus-style;
+  }
+}
+
+.base-body-block {
+  padding:map-get($base-spacing, '3');
+  display: inline-block;
+  @include md{
+    padding:map-get($base-spacing, '4');
+  }
+}

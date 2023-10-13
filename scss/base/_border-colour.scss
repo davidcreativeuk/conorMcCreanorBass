@@ -1,0 +1,5 @@
+@each $name, $value in $base-colours {
+    .base-border--#{$name} {
+      border-color: $value !important;
+    }   
+}

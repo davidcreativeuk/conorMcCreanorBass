@@ -1,0 +1,29 @@
+.base-header {
+    background-color: inherit;
+    border-bottom: 1px solid map-get($base-colours, 'black');    
+}
+
+.base-header-flex {
+  display: flex;
+  flex-flow: row wrap; 
+  justify-content: space-between;
+  @include md {
+    display:block;
+  } 
+}
+
+.base-header-logo {
+  font-family: $base-header-family;
+  font-size: map-get($base-font-sizes, 'header-logo-sm');
+  line-height: $base-line-height;
+  font-weight: $base-font-weight-bold;
+  color: inherit;
+  display: inline-block;
+  padding: map-get($base-spacing, '4') 0; 
+  max-width: 70vw;
+  @include md {
+    font-size: map-get($base-font-sizes, 'header-logo');
+    padding: map-get($base-spacing, '5') 0; 
+    max-width: 100vw;
+  }
+}

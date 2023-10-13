@@ -1,0 +1,7 @@
+/* colouring selector to colout type */
+
+@each $name, $value in $base-colours {
+  .base-font--#{$name} {
+    color: $value !important;
+  }   
+}
